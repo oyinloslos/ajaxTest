@@ -1,3 +1,5 @@
+var logger = require("./logger.js");
+
 
 	function Play(name){
 		this.name = name || "oyin";
@@ -6,11 +8,11 @@
 
 	Play.prototype.greets =  function(target) {
 		if(!target){
-			console.error("cannot find target");
+			logger.error("cannot find target");
 			return;
 		}
 
-		console.log(this.name + " greets " + target);
+		logger.log(this.name + " greets " + target);
 	}
 
 	Play.prototype.lateGreeting = function(target, cb) {
